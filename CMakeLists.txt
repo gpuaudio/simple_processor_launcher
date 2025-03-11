@@ -9,6 +9,9 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 # Project Name (Unique project name)
 set(project_name ProcLaunch)
 
+include(FetchContent)
+cmake_policy(SET CMP0135 NEW)
+
 # List of components included in the project
 set(components ProcLaunchLib gain_launcher iir_launcher fir_launcher)
 
@@ -29,6 +32,14 @@ set(cmake-common-${project_name}_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 list(INSERT CMAKE_MODULE_PATH 0 "${cmake-common-${project_name}_SOURCE_DIR}")
 
 set(CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH FALSE)
+
+# AudioFile
+FetchContent_Declare(
+    AudioFile
+    URL https://github.com/adamstark/AudioFile/archive/refs/tags/1.1.0.zip
+    SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/common/include/AudioFile
+)
+FetchContent_MakeAvailable(AudioFile)
 
 # Process all project components. call add_subdirectory
 foreach (component ${components})
