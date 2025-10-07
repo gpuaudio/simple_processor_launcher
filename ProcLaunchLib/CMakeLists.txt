@@ -16,7 +16,7 @@ FetchContent_MakeAvailable(engine_api)
 # GPU AUDIO CLIENT
 FetchContent_Declare(
     gpu_audio_client
-    URL https://github.com/gpuaudio/platform_headers/releases/download/v0.0.1/gpu_audio_client-v0.1.1_12.zip
+    URL https://github.com/gpuaudio/platform_headers/releases/download/v0.0.1/gpu_audio_client-v0.1.1_14.zip
     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/gpu_audio_client
 )
 FetchContent_MakeAvailable(gpu_audio_client)
@@ -24,14 +24,14 @@ FetchContent_MakeAvailable(gpu_audio_client)
 # JSON
 FetchContent_Declare(
     json
-    URL https://github.com/nlohmann/json/releases/download/v3.11.2/json.tar.xz
+    URL https://github.com/nlohmann/json/releases/download/v3.12.0/json.tar.xz
 )
 FetchContent_MakeAvailable(json)
 
 # Google Tests
 FetchContent_Declare(
     googletest
-    URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
+    URL https://github.com/google/googletest/releases/download/v1.17.0/googletest-1.17.0.tar.gz
 )
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
